@@ -3,9 +3,9 @@
 HBGR is a Homphily-Based Graph Reweighting algorithm, which can be applied on different distributed community detection frameworks to enhance the fairness performance.
 
 1. Requirements
-   Python (versions > 3.7 preferred)
-   NetworkX (network analysis in Python): https://networkx.org/
-   OpenMP should be installed
+   - Python (versions > 3.7 preferred)
+   - NetworkX (network analysis in Python): https://networkx.org/
+   - OpenMP should be installed
    
 3. How to run:
    python HBGR.py [input_file] [input_attribute_file] [negative_weight_probability]
