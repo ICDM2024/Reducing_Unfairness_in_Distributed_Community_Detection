@@ -16,7 +16,7 @@ HBGR is a Homphily-Based Graph Reweighting algorithm, which can be applied on di
      attribute index in the reading file list)
    - negative_weight_probability: [0,1] usually set it to 0.5 and could get good overall performance on fariness, but can be close to 0 (better for accuracy) or 1 (better for fairness)
    
-4. How to test:
+3. Experiment:
    Input (G_prime) file to distributed community detection frameworks: RelaxMap (distributed InfoMap) and METIS-Based Vite (distributed Louvain)
 
    - RelaxMap: https://github.com/uwescience/RelaxMap/tree/master
@@ -25,7 +25,7 @@ HBGR is a Homphily-Based Graph Reweighting algorithm, which can be applied on di
    For METIS-Based Vite, you need to first input G-prime into METIS, and then input the results of METIS (each partition contains a number of nodes) into the input of Vite (as the 
    nodess that need to be processed by different processors when Vite is working).
    
-5. How to test:
+4. How to test:
    After get community structure (sequential version, standart distributed version and HBGR distributed version), the following tests can be performed：
    
    - Accuracy Test (modularity): https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.quality.modularity.html
