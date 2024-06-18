@@ -1,8 +1,9 @@
+import sys
 import networkx as nx
 import random
 
-def HBGR(nagative_random, input_file, input_attribute_file):
-    n_random = nagative_random
+def HBGR(negative_weight_probability, input_file, input_attribute_file):
+    n_random = negative_weight_probability
     
     # Read graph from input file
     inputs = open(input_file, "r" )
@@ -87,7 +88,7 @@ def HBGR(nagative_random, input_file, input_attribute_file):
                 f.write(str(abs(Er_b - Rr_b)))
                 f.write("\n")
             if (attribute_list[index_node1] == attribute_list[index_node2] == 0):
-                if (g_random  > n_random):
+                if (g_random > n_random):
                     G_new.add_edge(numbers[0], numbers[1], weight= abs(Er_r - Rr_r))
                     f.write(str(int(numbers[0])))
                     f.write("\t")
@@ -95,7 +96,7 @@ def HBGR(nagative_random, input_file, input_attribute_file):
                     f.write("\t")
                     f.write(str(abs(Er_r - Rr_r)))
                     f.write("\n")
-                if (g_random  <= n_random):
+                if (g_random <= n_random):
                     G_new.add_edge(numbers[0], numbers[1], weight= - abs(Er_r - Rr_r))
                     f.write(str(int(numbers[0])))
                     f.write("\t")
@@ -104,7 +105,7 @@ def HBGR(nagative_random, input_file, input_attribute_file):
                     f.write(str(-abs(Er_r - Rr_r)))
                     f.write("\n")
             if (attribute_list[index_node1] == attribute_list[index_node2] == 1):
-                if (g_random  > n_random):
+                if (g_random > n_random):
                     G_new.add_edge(numbers[0], numbers[1], weight= abs(Eb_b - Rb_b))
                     f.write(str(int(numbers[0])))
                     f.write("\t")
@@ -112,7 +113,7 @@ def HBGR(nagative_random, input_file, input_attribute_file):
                     f.write("\t")
                     f.write(str(abs(Eb_b - Rb_b)))
                     f.write("\n")
-                if (g_random  <= n_random):
+                if (g_random <= n_random):
                     G_new.add_edge(numbers[0], numbers[1], weight= -abs(Eb_b - Rb_b))
                     f.write(str(int(numbers[0])))
                     f.write("\t")
@@ -122,9 +123,11 @@ def HBGR(nagative_random, input_file, input_attribute_file):
                     f.write("\n")
 
 if __name__=="__main__": 
-    # Set negative random to encourage nodes from the same protected group to appear on different machines
-    negative_random =  0.5
-    # Set input file path
-    input_file = "dataset/musae_git_edges.csv"
-    input_attribute_file = "dataset/musae_git_target.csv"
-    HBGR(negative_random, input_file, input_attribute_file)
+    # Read negative random to encourage nodes from the same protected group to appear on different machines
+    # Read input file paths
+    if ( len(sys.argv) > 4):
+        print("Wrong number of input, please check it again ... ")
+    input_file = sys.argv[1]
+    input_attribute_file = sys.argv[2]
+    negative_weight_probability  = float(sys.argv[3])
+    HBGR(negative_weight_probability, input_file, input_attribute_file)
