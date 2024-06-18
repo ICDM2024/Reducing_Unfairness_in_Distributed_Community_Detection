@@ -1,0 +1,7 @@
+Here, list one dataset in the experiments: GitHub Social Network (https://snap.stanford.edu/data/github-social.html)
+
+musae_git_edges.csv: an edge list file, every line in the file indicate one edge in the social network graph.
+
+musae_git_target.csv: a node attribute file, where the third column indicates the research fields: Web or Machine Learning.
+
+For other datasets, you may download them based on links provided in paper, but code (for reading attribute_file) may become different, so needs to change it to read the correct information.
