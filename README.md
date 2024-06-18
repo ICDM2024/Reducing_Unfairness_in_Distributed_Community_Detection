@@ -29,7 +29,7 @@ HBGR is a Homphily-Based Graph Reweighting algorithm, which can be applied on di
    After get community structure (sequential version, standart distributed version and HBGR distributed version), the following tests can be performed：
    
    - Accuracy Test (modularity): https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.quality.modularity.html
-   - Fairness Test: F_balance and WIR (please refer to paper)
+   - Fairness Test: F_balance and WIR (please refer to paper); Fairness comparison shows in fairness_test folder.
    - Efficiency Test: Divide the running time of the sequential algorithm by the running time of the distributed algorithm. The smaller the value, the better the running efficiency 
      (RelaxMap and Vite offer total computational time). 
    
