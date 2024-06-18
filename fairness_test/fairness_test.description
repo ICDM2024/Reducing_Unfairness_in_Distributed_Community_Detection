@@ -1,1 +1,5 @@
+An example of how to perform fairness testing on community structure (the example comes from the toy graph in the paper). 
 
+- When performing fairness testing on real datasets, you only need to enter different community structures (for example, standard distribution method and HBGR distribution method), and provide the attribute file and the attributes you want to test. 
+- The program can automatically compare the fairness differences brought by the two methods. 
+- The lower the curve, the better the fairness performance.
